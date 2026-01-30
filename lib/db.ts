@@ -10,7 +10,7 @@ export const pool = new Pool(
     {
     connectionString,
      ssl:{
-    rejectUnauthorized:false,
+    rejectUnauthorized:true,
     ca:caCert
     }
 });

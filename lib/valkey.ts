@@ -3,8 +3,8 @@ import Redis from "ioredis";
 
 export const valkey = new Redis(
     process.env.VALKEY_URI as string, {
-        ttl:{
-            rejectUnauthorized: false,
+        tls:{
+            rejectUnauthorized: true,
 
         }
     }
