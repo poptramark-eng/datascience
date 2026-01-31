@@ -1,34 +1,26 @@
-"use client";
+'use client'
+import {useRouter} from 'next/navigation';
 
-import { useRouter } from "next/navigation";
+
 
 export default function UserForm() {
   const router = useRouter();
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
-
-    try {
-      const req = await fetch("/api/creator", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (req.ok) {
-        const res = await req.json();
-        console.log("Success:", res);
-        router.push("/components"); // redirect after success
-      } else {
-        const error = await req.json();
-        console.error("Error:", error);
-      }
-    } catch (err) {
-      console.error("Request failed:", err);
-    }
+ async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
+e.preventDefault();
+const formData = new FormData(e.currentTarget);
+const obj = Object.fromEntries(formData.entries())
+const res = await fetch('/api/creators',{method:'POST',body:JSON.stringify(obj)});
+const message =await res.json();
+if(message.message==='success'){router.push('/');}
+else if(message.message==='fail'){
+  alert('stop joking');
+}
+else {
+  router.push('/dashboard');
+}
   }
+  
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
