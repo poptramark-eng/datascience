@@ -2,9 +2,13 @@
 import {useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
 
+type User = { id: number; 
+    name: string; 
+    email: string;
+     created_at: string; };
 export default function Usage(){
-const router = useRouter();
-const [users, setUsers]=useState([]);
+
+const router = useRouter(); const [users, setUsers] = useState<User[]>([]); // 👈 typed state
 useEffect(()=>{
     async function query() {
         const data = await fetch('/api/users',{method:'GET'});
