@@ -8,7 +8,7 @@ const salt = await bcrypt.genSalt(10);
 const hashed_password = await bcrypt.hash(password,salt);
 password = hashed_password;
 
-const check = await valkey.hmget(`users:${email}`, email);
+const check = await valkey.hget(`users:${email}`, 'email');
 if(typeof check !== 'string' || check!==email){
 await valkey.hset(`users:${email}`, {name, email, password});
 return NextResponse.json({message: "sucess"});
