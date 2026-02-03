@@ -9,7 +9,8 @@ if(typeof check !== 'string' || check !==email)
     {
     return NextResponse.json({message:'user does not exist'});
 }else{
-    const hash = await valkey.hmget(`users:${email}`, password);
+    const hash = await valkey.hget(`users:${email}`, 'password');
+    
 if(typeof hash ==='string'){
         const match = await bcrypt.compare(password, hash);
     if(match){
