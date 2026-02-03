@@ -11,7 +11,7 @@ password = hashed_password;
 const check = await valkey.hget(`users:${email}`, 'email');
 if(typeof check !== 'string' || check!==email){
 await valkey.hset(`users:${email}`, {name, email, password});
-return NextResponse.json({message: "sucess"});
+return NextResponse.json({message: 'sucess'});
 }
 else{
     return NextResponse.json({message:'fail'});

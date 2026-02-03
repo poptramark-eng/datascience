@@ -10,14 +10,14 @@ export default function Registration(){
         const obj = Object.fromEntries(data.entries());
         const user = {name:obj.name, email:obj.email, password:obj.password};
         const res = await fetch("/api/v1/register", {
-            method: "POST",
+            method: "POST",headers: {"Content-Type":"application/json"},
             body: JSON.stringify(user)
         });
         const base = await res.json();
         if(base.message==='success'){
             router.push('/');
         } 
-        else if(base.message==="fail") {
+        else if(base.message==='fail') {
             alert('user already registered, proceed to login');
         }
     }
