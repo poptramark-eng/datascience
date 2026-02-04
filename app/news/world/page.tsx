@@ -48,17 +48,14 @@ useEffect(()=>{
    <li><Link href='/news/politics'>POLITICS</Link></li>
    <li><Link href='/news/sports'>SPORTS</Link></li>
    <li><Link href='/news/technology'>TECHNOLOGY</Link></li>
-   <li><Link href='/news/education'>EDUCATION</Link></li>
+   
    <li><Link href='/news/science'>SCIENCE</Link></li>
-   <li><Link href='/news/health'>HEALTH</Link></li>
-   <li><Link href='/news/crime'>CRIME</Link></li>
+   
    <li><Link href='/news/business'>BUSINESS</Link></li>
    <li><Link href='/news/world'>WORLD</Link></li>
-   <li><Link href='/news/tourism'>TOURISM</Link></li>
+   
    <li><Link href='/news/entertainment'>ENTERTAINMENT</Link></li>
-   <li><Link href='/news/environment'>ENVIRONMENT</Link></li>
-   <li><Link href='/news/other'>OTHER</Link></li>
-   <li><Link href='/news/breaking'>BREAKING</Link></li>
+   
      </ul>
      </nav>
             <ul className='top'>
