@@ -36,17 +36,17 @@ li{
     margin: 0;
     padding: 0;
     overflow-y:scroll;
-    background-color: #1f1f1f;
+    background-image: url("/bj.jpg");
 }
 .top >li{
     background-color: white;
     max-width: 100%;
-    padding: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+    padding: 20px;
+    margin: 10px auto 0;
+    width: 80vw;
     border: 1px solid;
     border-radius: 20;
+    overflow: scroll;
     
     
 }
@@ -54,14 +54,14 @@ li{
     text-align: center;
 }
 footer{
-    background-color: #1f1f1f;
-        color: grey;
+    background-color: white;
+        color: #1f1f1f;
     position: relative;
     bottom: 0px;
     margin: 0;
     text-align: center;
-    font-size: 1.6rem;
-    height: 10vh;
+    font-size: 1rem;
+    height: 5vh;
     width: 100vw;
     }
     .categories{
@@ -70,15 +70,38 @@ footer{
         align-items: center;
         justify-content: center;
         overflow: scroll;
+        flex-wrap: wrap;
     }
     .categories>li{
-        padding: 20px;
+        padding: 10px;
         margin: 0;
         background-color: white;
         color: red;
         text-align: center;
-        font-size: 1.611 rem;
+        font-size: small;
         font-family: sans-serif;
         font-weight: bolder;
         
     }
+    @media (width <= 400px){
+
+        .categories{
+            flex-direction: column;
+            font-size: x-small;
+            
+
+        }
+        .categories>li:hover{
+            background-color: black;
+        }
+    }
+    .newshead{
+        background-color: #1f1f1f;
+        color: red;
+        text-align: center;
+        letter-spacing: 1.5;
+        height: 50px;
+    }
+    .categories>li:hover{
+            background-color: black;
+        }

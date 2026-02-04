@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
+
 
 export const metadata: Metadata = {
   title: "Mark Machukhu Projects",
@@ -29,7 +29,7 @@ export default function RootLayout({
 
         {/* Footer */}
         <footer>
-         © Mark Machukhu || Software Engineer || {dat}
+         © Mark Machukhu . Software Engineer . {dat}
         </footer>
       </body>
     </html>

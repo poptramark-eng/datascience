@@ -26,7 +26,7 @@ const [articles, setArticles]= useState<{
 }[]>([]);
 useEffect(()=>{
     async function news(){
-        const news_data = await fetch('/api/v1/news/category?category=top');
+        const news_data = await fetch('/api/v1/news/category?category=breaking');
         const data = await news_data.json();
         setArticles(data.articles);
         
