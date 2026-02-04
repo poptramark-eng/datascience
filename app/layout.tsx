@@ -16,13 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="min-h-screen bg-cover bg-center font-sans text-gray-100 flex flex-col"
-        style={{ backgroundImage: "url('/bg.jpg')" }}
+        
+        style={{ backgroundColor: "white" }}
       >
         {/* Header Section */}
         <header className="w-full bg-black/50 backdrop-blur-md py-6 shadow-lg">
           <h1 className="text-4xl md:text-5xl font-extrabold text-center text-blue-400 drop-shadow-lg">
-            Database CRUD Operations Application
+            MARK MACHUKHU'S PROJECTS
           </h1>
         </header>
 
@@ -49,7 +49,7 @@ export default function RootLayout({
         </nav>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-5xl mx-auto px-6 py-10 bg-black/40 backdrop-blur-md rounded-2xl shadow-lg">
+        <main>
           {children}
         </main>
 

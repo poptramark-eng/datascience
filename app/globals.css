@@ -2,7 +2,23 @@
 body{
     box-sizing: border-box;
     margin: 0;
-    width: 100%;
-    height: 100%;
 }
-
+main{
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    overflow-x: hidden;
+}
+li{
+    margin-bottom: 20px;
+}
+h1{
+    color:red;
+    font-size:xx-larger;
+    font-size: larger;
+}
+Link:hover{
+    color: white;
+    background-color: black;
+}
