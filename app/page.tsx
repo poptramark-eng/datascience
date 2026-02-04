@@ -8,7 +8,9 @@ export default function HomePage() {
         A modern web application to manage your data seamlessly. Create, Read, Update, and Delete records with ease. Built with Next.js, TypeScript, and Tailwind CSS.
       </p>
 
+ 
 
+      {/* Features Section */}
       <section className="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl w-full">
         <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-lg">
           <h3 className="text-xl font-bold text-blue-400 mb-2">Create</h3>
