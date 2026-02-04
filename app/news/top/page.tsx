@@ -19,7 +19,7 @@ const [articles, setArticles]= useState<{
     title: string, 
     image_url: string, 
     description: string,
-    source_name?: string
+    source_name: string
     source_url: string,
     source_icon: string
 
@@ -29,7 +29,7 @@ useEffect(()=>{
         const news_data = await fetch('/api/v1/news');
         const data = await news_data.json();
         setArticles(data.articles);
-        console.log(articles[0].link);
+        
     }
     news();
 },[]);
@@ -38,31 +38,69 @@ useEffect(()=>{
 
     
     return(
-        <ul>
+<div>
+     <h2>Poptra World News Dissemination</h2>
+     <nav>
+     <ul className='categories'>
+        <li>Top Headlines</li>
+        <li>Politics</li>
+        <li>Science</li>
+        <li>Technology</li>
+        <li>Sports</li>
+     </ul>
+     </nav>
+            <ul className='top'>
             {articles.map((article)=>{
-                if(article.image_url && article.title && article.description &&article.link){
-                    const dater = new Date(article.pubDate).toLocaleDateString();
-                return(
+                if(article.image_url && article.title && article.description &&article.link&&article.source_name&&article.source_name&&article.source_url){
+                    
+                    
+                    const dater = new Date(article.pubDate).toLocaleDateString("en-US", {weekday:"short", year:"numeric",day:"numeric"});
+               
+                    return(
                 
                 <li key={article.article_id}>
 
-                <h1>{article.title}</h1>
-                <b><h2>
-                    Date of publication {dater}
-                    </h2></b>
+                <h1>{article.title.toUpperCase()}</h1>
+                
                 <div>
-                    <Image src={article.image_url} alt="Image"  width={1024} height={640}/>
+                    <Image 
+                    src={article.image_url} 
+                    alt="Image" 
+                     width={1024} 
+                     height={640}
+                     />
                    
                     <article>
                         {article.description}
                         <div>
                             <b><h2>
-                                <Link href={article.link} target='_blank'>READ MORE</Link>
-                                </h2></b>
-                            <i>Author . {article.creator?article.creator[0]:'unknown' }</i>
+                                <Link className='read' href={article.link} target='_blank'>READ MORE</Link>
+                                </h2>
+                                 <span>
+                                     <Link href={article.source_url} target='_blank'>
+                                <div>
+                                    <Image
+                                     src={article.source_icon} 
+                                     alt={article.source_name} 
+                                     width={30} 
+                                     height={30} 
+                                     style={{objectFit:"contain"}}/>
+                                <b>
+                                    <em>{article.source_name.toUpperCase()}</em>
+                                    </b>
+                                </div>
+                                
+                                
+                                </Link>
+    
+                                    </span>
+                                </b>
+                                       <br />                    
+                            <i className='author'>{article.creator?article.creator[0].charAt(0).toUpperCase():'unknown' }.{dater}</i>
                         </div>
                     </article>
-                    <hr />
+                    <br />
+                    <br />
                 </div>
             </li>);
                 }
@@ -73,5 +111,6 @@ useEffect(()=>{
             }
         )}
         </ul>
+</div>
     );
 }
