@@ -15,6 +15,7 @@ export default function Registration(){
         });
         const base = await res.json();
         if(base.message==='success'){
+      
             router.push('/');
         } 
         else if(base.message==='fail') {

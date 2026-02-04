@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+<<<<<<< HEAD
         
         style={{ backgroundColor: "white" }}
       >
@@ -25,28 +26,13 @@ export default function RootLayout({
             MARK MACHUKHU'S PROJECTS
           </h1>
         </header>
+=======
+        className="min-h-screen bg-cover bg-center font-sans flex flex-col"
+        style={{ backgroundImage: "url('/bg.jpg')" }}
+      >
+        
+>>>>>>> a85b1ca58d2e9c2958dacf2525c7838438e82600
 
-        {/* Navigation */}
-        <nav className="bg-white/80 backdrop-blur-md rounded-xl shadow-md my-6 mx-auto max-w-3xl">
-          <ul className="flex justify-center space-x-10 p-4">
-            <li>
-              <Link
-                href="/authenthication/registration"
-                className="px-4 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition"
-              >
-                Register
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/authenthication/login"
-                className="px-4 py-2 rounded-lg bg-gray-800 text-white font-medium hover:bg-gray-900 transition"
-              >
-                Login
-              </Link>
-            </li>
-          </ul>
-        </nav>
 
         {/* Main Content */}
         <main>
