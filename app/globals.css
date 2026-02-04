@@ -35,8 +35,9 @@ li{
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    
     overflow-y:scroll;
-    background-image: url("/bj.jpg");
+    background-color: black;
 }
 .top >li{
     background-color: white;
@@ -46,7 +47,7 @@ li{
     width: 80vw;
     border: 1px solid;
     border-radius: 20;
-    overflow: scroll;
+    
     
     
 }
