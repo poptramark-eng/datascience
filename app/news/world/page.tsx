@@ -45,16 +45,8 @@ useEffect(()=>{
      <nav>
      <ul className='categories'>
    <li><Link href='/news/top'>TOP</Link></li>
-   <li><Link href='/news/politics'>POLITICS</Link></li>
-   <li><Link href='/news/sports'>SPORTS</Link></li>
-   <li><Link href='/news/technology'>TECHNOLOGY</Link></li>
-   
-   <li><Link href='/news/science'>SCIENCE</Link></li>
-   
-   <li><Link href='/news/business'>BUSINESS</Link></li>
    <li><Link href='/news/world'>WORLD</Link></li>
-   
-   <li><Link href='/news/entertainment'>ENTERTAINMENT</Link></li>
+ 
    
      </ul>
      </nav>
