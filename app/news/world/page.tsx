@@ -15,7 +15,7 @@ const [articles, setArticles]= useState<{
     article_id:string, 
     pubDate: string,
     link: string,
-    creator?: string[],
+    creator: string[],
     title: string, 
     image_url: string, 
     description: string,
@@ -46,7 +46,7 @@ useEffect(()=>{
      <ul className='categories'>
    <li><Link href='/news/top'>TOP</Link></li>
    <li><Link href='/news/world'>WORLD</Link></li>
- 
+
    
      </ul>
      </nav>
@@ -55,7 +55,10 @@ useEffect(()=>{
                 if(article.image_url && article.title && article.description &&article.link&&article.source_name&&article.source_name&&article.source_url){
                     
                     
-                    const dater = new Date(article.pubDate).toLocaleDateString("en-US", {weekday:"short", year:"numeric",day:"numeric"});
+                    const dater = new Date(article.pubDate).toLocaleDateString("en-US", {weekday: 'long', 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric'});
                
                     return(
                 
@@ -71,13 +74,13 @@ useEffect(()=>{
                      height={640}
                      />
                    
-                    <article>
+                    <article className='message'>
                         {article.description}
                         <div>
                             <b><h2>
                                 <Link className='read' href={article.link} target='_blank'>READ MORE</Link>
                                 </h2>
-                                 <span>
+                                 
                                      <Link href={article.source_url} target='_blank'>
                                 <div>
                                     <Image
@@ -94,7 +97,7 @@ useEffect(()=>{
                                 
                                 </Link>
     
-                                    </span>
+                                    
                                 </b>
                                        <br />                    
                             <i className='author'>{article.creator?article.creator[0].charAt(0).toUpperCase():'unknown' }.{dater}</i>

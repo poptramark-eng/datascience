@@ -8,7 +8,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport = { width: "device-width", initialScale: 1 };
-export const dat = new Date().toLocaleDateString("en-US", {weekday:"short", year:"numeric",day:"numeric"});
+export const dat = new Date().toLocaleDateString("en-US", {weekday: 'long', 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric'});
 
 export default function RootLayout({
   children,

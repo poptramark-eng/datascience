@@ -55,7 +55,10 @@ useEffect(()=>{
                 if(article.image_url && article.title && article.description &&article.link&&article.source_name&&article.source_name&&article.source_url){
                     
                     
-                    const dater = new Date(article.pubDate).toLocaleDateString("en-US", {weekday:"short", year:"numeric",day:"numeric"});
+                    const dater = new Date(article.pubDate).toLocaleDateString("en-US", {weekday: 'long', 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric'});
                
                     return(
                 
@@ -67,17 +70,17 @@ useEffect(()=>{
                     <Image 
                     src={article.image_url} 
                     alt="Image" 
-                     width={1024} 
-                     height={640}
+                     width={912} 
+                     height={500}
                      />
                    
-                    <article>
+                    <article className='message'>
                         {article.description}
                         <div>
                             <b><h2>
                                 <Link className='read' href={article.link} target='_blank'>READ MORE</Link>
                                 </h2>
-                                 <span>
+                                 
                                      <Link href={article.source_url} target='_blank'>
                                 <div>
                                     <Image
@@ -94,7 +97,7 @@ useEffect(()=>{
                                 
                                 </Link>
     
-                                    </span>
+                                    
                                 </b>
                                        <br />                    
                             <i className='author'>{article.creator?article.creator[0].charAt(0).toUpperCase():'unknown' }.{dater}</i>
