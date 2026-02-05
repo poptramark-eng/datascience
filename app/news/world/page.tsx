@@ -15,7 +15,7 @@ const [articles, setArticles]= useState<{
     article_id:string, 
     pubDate: string,
     link: string,
-    creator: string[],
+    creator?: string[],
     title: string, 
     image_url: string, 
     description: string,
@@ -45,8 +45,13 @@ useEffect(()=>{
      <nav>
      <ul className='categories'>
    <li><Link href='/news/top'>TOP</Link></li>
+   <li><Link href='/news/politics'>POLITICS</Link></li>
+   <li><Link href='/news/sports'>SPORTS</Link></li>
+   <li><Link href='/news/technology'>TECHNOLOGY</Link></li>
+    <li><Link href='/news/entertainment'>ENTERTAINEMENT</Link></li>
    <li><Link href='/news/world'>WORLD</Link></li>
-
+      <li><Link href='/news/education'>EDUCATION</Link></li>
+   
    
      </ul>
      </nav>
@@ -70,8 +75,8 @@ useEffect(()=>{
                     <Image 
                     src={article.image_url} 
                     alt="Image" 
-                     width={1024} 
-                     height={640}
+                     width={912} 
+                     height={500}
                      />
                    
                     <article className='message'>
